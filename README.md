@@ -1,19 +1,20 @@
-# Luke's build of st - the simple (suckless) terminal
+# Confuse Build of `st` 
 
-The [suckless terminal (st)](https://st.suckless.org/) with some additional features that make it literally the best terminal emulator ever:
+The [suckless terminal (st)](https://st.suckless.org/) with some additional features added by [Luke Smith](mailto:luke@lukesmith.xyz) and a `.desktop`-file that make it literally the best terminal emulator ever.
 
 ## Unique features (using dmenu)
 
-+ **follow urls** by pressing `alt-l`
-+ **copy urls** in the same way with `alt-y`
-+ **copy the output of commands** with `alt-o`
++ **follow urls** by pressing <kbd>Alt</kbd> + <kbd>L</kbd>
++ **copy urls** in the same way with <kbd>Alt</kbd> + <kbd>Y</kbd>
++ **copy the output of commands** with <kbd>Alt</kbd> + <kbd>O</kbd>
++ **a desktop file**
 
-## Bindings for
+## Key Bindings
 
-+ **scrollback** with `alt-↑/↓` or `alt-pageup/down` or `shift` while scrolling the mouse
-+ OR **vim-bindings**: scroll up/down in history with `alt-k` and `alt-j`. Faster with `alt-u`/`alt-d`.
-+ **zoom/change font size**: same bindings as above, but holding down shift as well. `alt-home` returns to default
-+ **copy text** with `alt-c`, **paste** is `alt-v` or `shift-insert`
++ **scrollback** with<kbd>Alt</kbd> + <kbd>↑/↓</kbd> or <kbd>Alt</kbd> + <kbd>pageup/down</kbd> or <kbd>Shift</kbd> while scrolling the mouse
++ OR **vim-bindings**: scroll up/down in history with<kbd>Alt</kbd>+<kbd>K</kbd> and<kbd>Alt</kbd>+<kbd>J</kbd>. Faster with<kbd>Alt</kbd>-<kbd>U</kbd>/<kbd>Alt</kbd>+<kbd>D</kbd>.
++ **zoom/change font size**: same bindings as above, but holding down shift as well.<kbd>Alt</kbd>+<kbd>Home</kbd> returns to default
++ **copy text** with<kbd>Alt</kbd> + <kbd>C</kbd>, **paste** is <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> or <kbd>Shift</kbd>+<kbd>Insert</kbd>
 
 ## Pretty stuff
 
@@ -28,21 +29,21 @@ The [suckless terminal (st)](https://st.suckless.org/) with some additional feat
 + Scrollback
 + updated to latest version 0.8.2
 
-## Installation for newbs
+## Installation
 
 ```
-git clone https://github.com/LukeSmithxyz/st
-cd st
-sudo make install
+git clone https://github.com/con-f-use/simpleterminal && cd st && sudo make install
 ```
 
-Users of Arch-based distros can also install it from the AUR as [st-luke-git](https://aur.archlinux.org/packages/st-luke-git/).
+### Requirements
 
-Obviously, `make` is required to build. `fontconfig` is required for the default build, since it asks `fontconfig` for your system monospace font.  It might be obvious, but `libX11` and `libXft` are required as well. Chances are, you have all of this installed already.
-
-On OpenBSD, be sure to edit `config.mk` first and remove `-lrt` from the `$LIBS` before compiling.
+* `make` 
+* `fontconfig` is used for getting your system monospace font
+*  `libX11` and `libXft` 
 
 Be sure to have a composite manager (`xcompmgr`, `compton`, etc.) running if you want transparency.
+
+On OpenBSD, be sure to edit `config.mk` first and remove `-lrt` from the `$LIBS` before compiling.
 
 ## How to configure dynamically with Xresources
 
@@ -68,8 +69,3 @@ To be clear about the color settings:
 - But if `wal` has run in your session, its colors will take priority.
 
 Note that when you run `wal`, it will negate the transparency of existing windows, but new windows will continue with the previously defined transparency.
-
-## Contact
-
-- Luke Smith <luke@lukesmith.xyz>
-- [https://lukesmith.xyz](https://lukesmith.xyz)
