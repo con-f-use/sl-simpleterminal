@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Simple Terminal
+GenericName=Terminal
+Comment=Suckless terminal emulator for X
+#Exec=st -t "Simple Terminal" -e xonsh
+Exec=tabbed -c -r 2 st -w '' -e xonsh 
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Icon=utilities-terminal
+Categories=System;TerminalEmulator;
+Keywords=shell;terminal;prompt,commandline,cmd;st;suckless;
+

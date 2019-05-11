@@ -44,6 +44,7 @@ install: st
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f st $(DESTDIR)$(PREFIX)/bin
 	cp -f st-copyout $(DESTDIR)$(PREFIX)/bin
+	cp -f st.desktop /usr/share/applications/
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st-copyout
 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
