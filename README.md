@@ -1,13 +1,18 @@
 # Confuse Build of `st` 
 
-The [suckless terminal (st)](https://st.suckless.org/) with some additional features added by [Luke Smith](mailto:luke@lukesmith.xyz) and a `.desktop`-file that make it literally the best terminal emulator ever.
+The [suckless terminal (st)](https://st.suckless.org/) with some additional features added by 
+[Luke Smith](mailto:luke@lukesmith.xyz) 
+and  
+[con-f-use](mailto:con-f-use@gmx.net)
+that make it literally the best terminal emulator ever.
 
 ## Unique features (using dmenu)
 
 + **follow urls** by pressing <kbd>Alt</kbd> + <kbd>L</kbd>
 + **copy urls** in the same way with <kbd>Alt</kbd> + <kbd>Y</kbd>
 + **copy the output of commands** with <kbd>Alt</kbd> + <kbd>O</kbd>
-+ **a desktop file**
+* **a desktop file**
+* **automatic tabbed detection** to start st in tabbed or non-tabbed mode with the `stt` (suckless-terminal-tabs) executable
 
 ## Key Bindings
 

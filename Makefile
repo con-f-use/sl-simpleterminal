@@ -43,6 +43,7 @@ dist: clean
 install: st
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f st $(DESTDIR)$(PREFIX)/bin
+	cp -f stt $(DESTDIR)$(PREFIX)/bin
 	cp -f st-copyout $(DESTDIR)$(PREFIX)/bin
 	cp -f st.desktop /usr/share/applications/
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
@@ -51,11 +52,14 @@ install: st
 	sed "s/VERSION/$(VERSION)/g" < st.1 > $(DESTDIR)$(MANPREFIX)/man1/st.1
 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
 	tic -sx st.info
+	update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(DESTDIR)$(PREFIX)/bin/stt 100 || true
 	@echo Please see the README file regarding the terminfo entry of st.
 
 uninstall:
-	rm -f $(DESTDIR)$(PREFIX)/bin/st
-	rm -f $(DESTDIR)$(PREFIX)/bin/st-copyout
-	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
+	rm -f $(DESTDIR)$(PREFIX)/bin/st \
+	      $(DESTDIR)$(PREFIX)/bin/st-copyout \
+	      $(DESTDIR)$(PREFIX)/bin/stt \
+	      $(DESTDIR)$(MANPREFIX)/man1/st.1
+	update-alternatives --remove x-terminal-emulator $(DESTDIR)$(PREFIX)/bin/stt || true
 
 .PHONY: all options clean dist install uninstall

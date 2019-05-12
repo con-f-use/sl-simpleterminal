@@ -1,0 +1,12 @@
+#!/bin/bash
+# Start suckless terminal in tabbed mode if possible
+opt=''
+if type tabbed &>/dev/null && type st &>/dev/null; then
+    if [[ ! $@ =~ "-e" ]]  && type xonsh &>/dev/null; then
+        opt='-e xonsh'
+    fi
+    tabbed -c -r 2 st -w '' $opt "$@"
+else
+    st $opt
+fi
+
