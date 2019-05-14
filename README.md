@@ -6,13 +6,55 @@ and
 [con-f-use](mailto:con-f-use@gmx.net)
 that make it literally the best terminal emulator ever.
 
-## Unique features (using dmenu)
+### My pet peeves with st
+
+Generally I like st and minimalist software and suckless in particular 
+(even donated to them and the registered association is right next to 
+where some my relatives live). 
+However, I still have some pet peeves with st: 
+
+- It wraps lines with actual an actual newline character, not a virtual one. 
+The means when you copy output, you copy superfluous newlines. 
+  It also means: 
+- Your old output doesn't resize as you resize the window. 
+- There is now good way to copy a part of the output that is larger than the window, 
+  since you can't scroll AND select at the same time (again afaik). 
+- Middle click copying is slightly broken 
+- I know the FAQ about 
+  ("Why doesn't the Del key work in some programs?")[(ttp://git.suckless.org/st/file/FAQ.html] 
+  but even if you apply their fixes, 
+  the del key breaks all the time during some time into a shell session. 
+- If you want tabs, you can use `tabbed`, 
+  sure, but that means your terminal now shows up as `tabbed` 
+  instead of `st` to various other programs. 
+  I know suckless rationlizes tabbed by saying, it's wasteful to re-
+  implement tabs for every application separately and that they don't
+  want to clutter the binary with them, especially as some users do not
+  need tabs. But isn't that what they made shared libraries for?
+- The fact that you have to re-compile and reinstall in order to change 
+  settings is just dumb. 
+  I know it's just one command that you can automise, it's just 
+  inefficient. 
+- The scrollback value is not in the config file but rather some 
+  preprocessor define hidden in a c file (very minor thing but annoyed 
+  perfectionist me).
+  
+
+## Features
 
 + **follow urls** by pressing <kbd>Alt</kbd> + <kbd>L</kbd>
 + **copy urls** in the same way with <kbd>Alt</kbd> + <kbd>Y</kbd>
 + **copy the output of commands** with <kbd>Alt</kbd> + <kbd>O</kbd>
 * **a desktop file**
 * **automatic tabbed detection** to start st in tabbed or non-tabbed mode with the `stt` (suckless-terminal-tabs) executable
++ Compatibility with `Xresources` and `pywal` for dynamic colors. 
+  The `Xdefaults` file shows a usage example.
++ Default [gruvbox](https://github.com/morhetz/gruvbox) colors otherwise.
++ Transparency/alpha, which is also adjustable from your `Xresources`.
++ Default font is system "mono" at 16pt, meaning the font will match your system font.
++ Vertcenter
++ Scrollback
++ updated to latest version 0.8.2
 
 ## Key Bindings
 
@@ -21,27 +63,13 @@ that make it literally the best terminal emulator ever.
 + **zoom/change font size**: same bindings as above, but holding down shift as well.<kbd>Alt</kbd>+<kbd>Home</kbd> returns to default
 + **copy text** with<kbd>Alt</kbd> + <kbd>C</kbd>, **paste** is <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> or <kbd>Shift</kbd>+<kbd>Insert</kbd>
 
-## Pretty stuff
-
-+ Compatibility with `Xresources` and `pywal` for dynamic colors. 
-  The `Xdefaults` file shows a usage example.
-+ Default [gruvbox](https://github.com/morhetz/gruvbox) colors otherwise.
-+ Transparency/alpha, which is also adjustable from your `Xresources`.
-+ Default font is system "mono" at 16pt, meaning the font will match your system font.
-
-## Other st patches
-
-+ Vertcenter
-+ Scrollback
-+ updated to latest version 0.8.2
-
 ## Installation
 
 ```
 git clone https://github.com/con-f-use/sl-simpleterminal && cd st && sudo make install
 ```
 
-### Requirements
+Requires:
 
 * `make` 
 * `fontconfig` is used for getting your system monospace font
@@ -75,38 +103,4 @@ To be clear about the color settings:
 - But if `wal` has run in your session, its colors will take priority.
 
 Note that when you run `wal`, it will negate the transparency of existing windows, but new windows will continue with the previously defined transparency.
-
-### My pet peeves with st
-
-Generally I like st and minimalist software and suckless in particular 
-(even donated to them and the registered association is right next to 
-where some my relatives live). 
-However, I still have some pet peeves with st: 
-
-- It wraps lines with actual an actual newline character, not a virtual one. 
-The means when you copy output, you copy superfluous newlines. 
-  It also means: 
-- Your old output doesn't resize as you resize the window. 
-- There is now good way to copy a part of the output that is larger than the window, 
-  since you can't scroll AND select at the same time (again afaik). 
-- Middle click copying is slightly broken 
-- I know the FAQ about 
-  ("Why doesn't the Del key work in some programs?")[(http://git.suckless.org/st/file/FAQ.html)] 
-  but even if you apply their fixes, 
-  the del key breaks all the time during some time into a shell session. 
-- If you want tabs, you can use `tabbed`, 
-  sure, but that means your terminal now shows up as `tabbed` 
-  instead of `st` to various other programs. 
-  I know suckless rationlizes tabbed by saying, it's wasteful to re-
-  implement tabs for every application separately and that they don't
-  want to clutter the binary with them, especially as some users do not
-  need tabs. But isn't that what they made shared libraries for?
-- The fact that you have to re-compile and reinstall in order to change 
-  settings is just dumb. 
-  I know it's just one command that you can automise, it's just 
-  inefficient. 
-- The scrollback value is not in the config file but rather some 
-  preprocessor define hidden in a c file (very minor thing but annoyed 
-  perfectionist me).
-  
 
