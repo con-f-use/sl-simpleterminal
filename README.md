@@ -30,7 +30,10 @@ The means when you copy output, you copy superfluous newlines.
   I know suckless rationlizes tabbed by saying, it's wasteful to re-
   implement tabs for every application separately and that they don't
   want to clutter the binary with them, especially as some users do not
-  need tabs. But isn't that what they made shared libraries for?
+  need tabs. 
+  But isn't that what they made shared libraries for?
+  Yes, we don't want to add too much dependencies and end up in dll-hell
+  but depending on another executable to be there is better?
 - The fact that you have to re-compile and reinstall in order to change 
   settings is just dumb. 
   I know it's just one command that you can automise, it's just 
