@@ -16,7 +16,8 @@ However, I still have some pet peeves with st:
 - It wraps lines with actual an actual newline character, not a virtual one. 
 The means when you copy output, you copy superfluous newlines. 
   It also means: 
-- Your old output doesn't resize as you resize the window. 
+- Your old output doesn't re-wrap as you resize the window. I.e. if you broaden the window, each line will keep it's old character width
+- If you reduce window with and then widen it again, all characters that were out of side disappear for ever.
 - There is now good way to copy a part of the output that is larger than the window, 
   since you can't scroll AND select at the same time (again afaik). 
 - Middle click copying is slightly broken 
